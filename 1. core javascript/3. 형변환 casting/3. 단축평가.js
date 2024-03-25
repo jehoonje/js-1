@@ -4,6 +4,12 @@ true && false //f
 false && true  //f
 false && false  //f
 
+true || true // t
+true || false //t
+false || true //t
+false || false  //f
+
+
 
 // 부정의 && 긍정의 ||
 
