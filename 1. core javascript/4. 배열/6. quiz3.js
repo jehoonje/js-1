@@ -139,11 +139,11 @@ while(true) {
               var index = tvxq.indexOf(memberName);
               var removeMember = tvxq.includes(memberName);
 
-              //// 값은 이미 true 상태.
+              //// 값은 이미 true 상태
                 if (removeMember) {
                   tvxq.splice(index, 1);   // 삭제하기
                   alert(tvxq);
-                  continue;
+                
 
               //// 다른입력값을 넣으면 돌아가기
               } else if (memberName !== tvxq) {
