@@ -4,6 +4,24 @@ function add(n1, n2) {
   return n1 + n2;
 }
 
+// 리턴이 없는 함수
+function multi(n1, n2) {
+  console.log(`${n1} x ${n2} = ${n1 * n2}`);
+  
+}
+
 // 반환값(return): 함수 호출부로 함수의 결과값을 전달해주는 것
 var result = add(10, 20) * add(add(1, 4), 2);
 console.log(`result: ${result}`);
+
+console.log('=====================');
+
+var r1 = multi(3, 4);
+console.log(`r1: ${r1}`);
+
+
+multi(add(2, 3), add(5, 6));
+
+// 리턴이 없는 함수는 변수에 저장하지 말고, 다른 함수의 매개값으로도 쓰면 안됨.
+var r2 = add(multi(2, 4), multi(3, 2));
+console.log(`r2: ${r2}`);
