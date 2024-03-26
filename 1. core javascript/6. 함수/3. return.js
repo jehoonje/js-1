@@ -28,11 +28,26 @@ console.log(`r2: ${r2}`);
 
 
 // 데이터베이스를 접속하는 함수
-function connectDatabase(id, pw, auth) {
-  var connect = getConnection();
-  // ....
-  // ...
-  // ..
-  // .
-  
+// function connectDatabase(id, pw, auth) {
+//   var connect = getConnection();
+//   // ....
+//   // ...
+//   // ..
+//   // .
+//   return ddd;
+// }
+
+
+
+// return이 없는 함수에서 return을 break처럼 사용하기
+function callName (nickName) { 
+  var prohibits = ['바보', '멍청이', '메롱'];
+  if (prohibits.includes(nickName)) {
+    console.log('나쁜말 쓰지 마세요!!');
+    return; // 종료의 의미 반복문의 break와 같음
+  }
+  console.log(`${nickName}님 안녕하세요!`);
 }
+
+console.log('==========================');
+callName('멍청이');
