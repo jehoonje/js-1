@@ -39,3 +39,18 @@ function sayHello(language='한국어') {
 }
 
 sayHello();
+
+
+// 매개변수가 없는 함수
+function selectRandomPet() {
+
+  var pets = ['멍멍이', '야옹이', '짹쨱이', '고라니', '노루루'];
+  return pets[3];
+}
+
+var r1 = selectRandomPet(3);
+var r2 = selectRandomPet(4);
+var r3 = selectRandomPet(0);
+console.log(`r1: ${r1}`);
+console.log(`r2: ${r2}`);
+console.log(`r3: ${r3}`);
