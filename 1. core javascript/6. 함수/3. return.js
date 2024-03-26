@@ -25,3 +25,14 @@ multi(add(2, 3), add(5, 6));
 // 리턴이 없는 함수는 변수에 저장하지 말고, 다른 함수의 매개값으로도 쓰면 안됨.
 var r2 = add(multi(2, 4), multi(3, 2));
 console.log(`r2: ${r2}`);
+
+
+// 데이터베이스를 접속하는 함수
+function connectDatabase(id, pw, auth) {
+  var connect = getConnection();
+  // ....
+  // ...
+  // ..
+  // .
+  
+}
