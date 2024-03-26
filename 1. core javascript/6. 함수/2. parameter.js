@@ -45,7 +45,8 @@ sayHello();
 function selectRandomPet() {
 
   var pets = ['멍멍이', '야옹이', '짹쨱이', '고라니', '노루루'];
-  return pets[3];
+  var rn = Math.floor(Math.random() * pets.length);
+  return pets[rn];
 }
 
 var r1 = selectRandomPet(3);
