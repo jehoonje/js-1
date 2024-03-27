@@ -50,43 +50,91 @@ function map(condition) {
   return filteredArray;
 }
 
-function min(userList, salary) {
-  if (userList.length === 0) {
-    return null; // userList가 비어있을 경우 null을 반환
-  }
-
-  let minUser = userList[0]; // 최소값을 저장할 변수를 첫 번째 요소로 초기화
+function min(userList, n) {
+  let minUser = userList[0]; 
   for (let i = 1; i < userList.length; i++) {
-    if (userList[i][salary] < minUser[salary]) {
-      minUser = userList[i]; // 현재 요소의 property 값이 최소값보다 작으면 최소값을 업데이트
+    if (userList[i][n] < minUser[n]) {
+      minUser = userList[i]; 
     }
   }
-  return minUser; // 최소값을 가진 사용자 객체 반환
+  return minUser; 
 }
 
-// 회원정보에서 회원들의 이름들만 다 추출해서
-// 배열에 담기
 
-const nameList = map((user) => user.userName);
-console.log(nameList);
 
-// 회원정보에서 회원의 주소들만 다 추출해서
-// 배열에 담아줘
 
-const addressList = map((user) => user.address);
-console.log(addressList);
+//////// 주성 /////////
+// function min(userList, X) {
+//   let minUser = userList[0];
+//   for (const user of userList) {
+//     if (user[X] < minUser[X]) {
+//       minUser = user;
+//     }
+//   }
+// }
 
-// 회원의 첫번째 취미들만 다 추출
-const firstHobbyList = map((user) => user.hobbys[0]);
-console.log(firstHobbyList);
+// // 회원정보에서 회원들의 이름들만 다 추출해서
+// // 배열에 담기
 
-// 모든 회원의 이름과 계정을 연결해서 배열에 담아줘
-// [대길이(abc1234), 빠나나(banana), ... ]
+// const nameList = map((user) => user.userName);
+// console.log(nameList);
 
-const everyNameAndIdList = map((user) => `${user.userName} (${user.account})`);
-console.log(everyNameAndIdList);
+// // 회원정보에서 회원의 주소들만 다 추출해서
+// // 배열에 담아줘
+
+// const addressList = map((user) => user.address);
+// console.log(addressList);
+
+// // 회원의 첫번째 취미들만 다 추출
+// const firstHobbyList = map((user) => user.hobbys[0]);
+// console.log(firstHobbyList);
+
+// // 모든 회원의 이름과 계정을 연결해서 배열에 담아줘
+// // [대길이(abc1234), 빠나나(banana), ... ]
+
+// const everyNameAndIdList = map((user) => `${user.userName} (${user.account})`);
+// console.log(everyNameAndIdList);
 
 
 
 console.log('최소 salary를 가진 사용자:', min(userList, 'salary'));
 console.log('최소 age를 가진 사용자:', min(userList, 'age'));
+
+
+function find(condition) {
+  for (const user of userList) {
+    if (condition(user)) {
+      return user;
+    }
+  }
+  return null;
+}
+
+function some(condition) {
+  for (const user of userList) {
+    if (condition(user)) {
+      return true;
+    }
+  }return null;
+}
+
+function every(condition) {
+  for (const user of userList) {
+    if (!condition(user)) {
+      return false;
+    }
+  }return true;
+}
+// 콜백 함수에 맵핑은 부수로 올 함수를 도와주는역할 한다 생각하면 됨
+
+// '서울'에 사는 첫 번째 사용자를 찾는 예시
+const firstUserInSeoul = find((user) => user.address === '서울');
+console.log('서울에 사는 첫 번째 사용자:', firstUserInSeoul);
+
+// // 급여 5,000,000 이상인 사용자가 하나라도 있는지 확인하는 예시
+const hasHighEarningUser = some((user) => user.salary >= 5000000);
+console.log('연봉이 5,000,000 이상인 사용자가 있는가?:', hasHighEarningUser);
+
+// // 모든 사용자가 '서울'에 사는지 확인하는 예시
+const allUsersInSeoul = every((user) => user.address === '서울');
+console.log('모든 사용자가 서울에 사는가?:', allUsersInSeoul);
