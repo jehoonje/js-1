@@ -18,8 +18,8 @@ function calcNumbersTotalAndAverage(...numbers) {
   var avg = total / numbers.length;
   
   return {
-    total : total,
-    avg : avg
+    total,
+    avg
   };
 }
 
