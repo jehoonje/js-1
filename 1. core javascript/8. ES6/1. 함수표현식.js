@@ -56,12 +56,22 @@ const dog = {
   name: '초코',
   age: 3,
   favorite: ['산책', '낮잠'],
+  // 객체안의 함수 "메서드" 라고함     객체의 전용함수 (객체의 기능을 표현)
   play: function(tool) {
     console.log(`${this.name} 강아지는 ${tool} 장난감으로 놀아요~`);
   },
 };
 
+const cat = {
+  name: '야옹이',
+  sleep: function() {
+    console.log('쿨쿨ㅋ루~~~~');
+  }
+}
+
 dog.play('개껌');
+cat.sleep();
+
 
 const arr = {
   0: 'zzz',
