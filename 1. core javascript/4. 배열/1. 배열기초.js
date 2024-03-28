@@ -46,7 +46,7 @@ console.log('================================');
 for (let i = 0; i < weekDays.length; i++) {
   console.log(`${weekDays[i]}요일!!`);
 }   // 인덱스 조건걸기 편함 홀수 거르기 라던가
-
+      // for of : 한명씩 나와봐
 for (let day of weekDays) {
   console.log(`${day}요일!!`);
 }  // 자동으로 n 바퀴 돌면서 전체순회를 해서 출력함.

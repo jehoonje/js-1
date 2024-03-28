@@ -99,6 +99,14 @@ const traders = [
 //   console.log(`total: ${total}`);
 
 
+/// 강사님 reduce 사용
+// const total = traders
+//     .filter(trs => trs.trader.city === '서울')
+//     .reduce((total, trs) => total + trs.value, 0);
+
+//     console.log(`총액 : ${total}`);
+
+
 
 
 // 1. **2023년에 대전에서 발생한 모든 거래의 총액을 계산해주세요.**
@@ -163,17 +171,61 @@ const traders = [
 
 // 5. **거래액이 700000원 이상인 거래를 모두 찾아, 해당 거래의 연도별로 분류해주세요. 결과는 `{2022: [...거래정보], 2023: [...거래정보]}`와 같은 형태가 되어야 합니다.**
 
+// const value = traders.filter(trade => trade.value >= 700000);
+    
+    
+// const groupedTradeByYear = value.reduce((acc, trade) => {
+//       const year = trade.year;
+//       if (acc[year]) {
+//         acc[year].push(trade);
+//       } else {
+//         acc[year] = [trade];
+//       }
+//       return acc;
+//     }, {});
 
-
-// traders
-//   .filter(traders => traders.trader.value >= 700000)
-//   .map(traders => [traders.trader.name])
-//   .forEach(result => console.log(result));
+    
+//     console.log(JSON.stringify(groupedTradeByYear, null, 2));
 
   
+
+
 // 6. **각 거래자별로 그들이 진행한 거래의 평균 거래액을 계산해주세요. 결과는 `{거래자이름: 평균거래액}` 형태의 객체가 되어야 합니다.**
+//                                           전체 , 현재
+// const groupedTradeByTrader = traders.reduce((acc, trade) => {
+//   const name = trade.trader.name;
+//   const value = trade.value;
+
+//   // 거래자 이름이 이미 존재하는 경우  ( 계산을 위해 더해주고, 더 한사람 체크 )
+//   if (acc[name]) {
+//     acc[name].totalValue += value;
+//     acc[name].totalCount += 1;
+//   } else {
+//     // 거래자 이름이 존재하지 않는 경우 새로운 객체 생성 ( 계산이 끝난 값 )
+//     acc[name] = {
+//       totalValue: value,
+//       totalCount: 1
+//     };
+//   }
+
+//   return acc;
+// }, {});
+
+// // 평균 거래액을 계산하여 새로운 객체에 저장
+// const averageTradeByTrader = {};
+// for (const name in groupedTradeByTrader) {
+//   const totalValue = groupedTradeByTrader[name].totalValue;
+//   const totalCount = groupedTradeByTrader[name].totalCount;
+//   averageTradeByTrader[name] = totalValue / totalCount;
+// }
+// console.log(averageTradeByTrader);
+
+
 
 // 7. **2022년과 2023년 각각에서 가장 많은 거래를 한 거래자의 이름과 그 거래 횟수를 출력해주세요.**
+
+
+
 
 // 8. **모든 거래 중 거래액이 중간값인 거래의 정보(거래자 이름, 도시, 연도, 거래액)를 출력해주세요.**
 

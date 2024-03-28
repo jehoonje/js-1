@@ -115,3 +115,17 @@ function myReduce(callback, initialValue) {
   }
   return accumulator;
 }
+
+// 색깔별로 사과 개수 카운트하기
+console.log('==========================');
+
+const countByColor = appleBasket.reduce((count, apple) => {
+
+  if (apple.color in count) {
+    count[apple.color]++;
+  } else {
+    count[apple.color] = 1;
+  }
+  return count;
+}, {})
+
