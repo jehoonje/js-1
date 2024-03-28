@@ -26,7 +26,6 @@ function myIncludes(array, searchElement) {
 
 
 
-
 var foods = ['족발', '피자', '파스타', '김치찌개'];
 
 var idx = myindexOf(foods, '김치찌개');

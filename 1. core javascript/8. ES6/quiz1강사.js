@@ -199,3 +199,8 @@ console.log('급여가 5,000,000 이상인 사용자가 있는가?:', hasHighEar
 // 모든 사용자가 '서울'에 사는지 확인하는 예시
 const allUsersInSeoul = every((user) => user.address === '서울');
 console.log('모든 사용자가 서울에 사는가?:', allUsersInSeoul);
+
+
+
+
+// 여러개를 찾으면 배열객체집합형으로 한개를 찾는거면 필요없음
