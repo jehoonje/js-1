@@ -9,45 +9,6 @@ function myForEach(array, callback) {
 
 
 
-const userList = [
-  {
-    account: 'abc1234',
-    userName: '대길이',
-    job: '추노',
-    address: '서울',
-    hobbys: ['수영', '축구', '테니스'],
-    salary: 5400000,
-    age: 35,
-  },
-  {
-    account: 'banana',
-    userName: '빠나나',
-    job: '과일',
-    address: '서울',
-    hobbys: ['푸드파이팅', '테니스'],
-    salary: 9700000,
-    age: 18,
-  },
-  {
-    account: 'park1234',
-    userName: '주차왕',
-    job: '발렛파킹',
-    address: '경기',
-    hobbys: ['족구', '축구', '테니스', '영화감상'],
-    salary: 3900000,
-    age: 56,
-  },
-  {
-    account: 'fire',
-    userName: '불꽃남자카리스마',
-    job: '게이머',
-    address: '서울',
-    hobbys: ['독서', '테니스'],
-    salary: 7900000,
-    age: 42,
-  },
-];
-
 
 
 // 배열 고차함수
@@ -71,7 +32,7 @@ console.log(`total: ${total}`);
 
 console.log('==========================');
 
-// filte: 조건에 맞는 배열안의 요소를 필터링
+// filter: 조건에 맞는 배열안의 요소를 필터링
 const numbers = [1,2,3,4,5,6,7,8,9,10];
 
 const filteredArray = numbers.filter(n => n % 2 === 0);
