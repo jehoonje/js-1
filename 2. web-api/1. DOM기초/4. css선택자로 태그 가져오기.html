@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="fruits">
+    <li class="f-item ap">사과</li>
+    <li class="f-item bn">바나나</li>
+    <li id="grape" class="f-item gp">포도</li>
+    <li lass="f-item pc">복숭아</li>
+  </ul>
+
+  <script>
+    
+    // const $grape = document.querySelector('.gp'); // .gp 점을 붙여서 선택자 문법 해줘야함
+    // const $grape = document.querySelector('.f-item'); // 여러개의 경우 맨첫번째꺼로 잡힘
+    // const $grape = document.querySelector('.f-item2'); // 요소노드가 존재하지않으면 nulld 반환
+    // const $grape = document.querySelector('#fruits li:nth-child(3)');  // CSS선택자 다 써도 됨
+    // const $grape = document.querySelector('.bn + li'); // CSS선택자 다 써도 됨
+    const $grape = document.querySelector('#grape'); // CSS선택자 다 써도 됨
+    // 굳이 id가 있으면 getElementById쓰는게 좋음 그게 빠름. 없으면 쿼리셀렉터!
+    
+
+    // console.log($grape);
+    
+    $grape.textContent = '맛있는 포도';
+
+    const $fItemList = [...document.querySelectorAll('.f-item')]
+    console.log($fItemList);
+    console.log([1,2,3]);
+    // for (const $f of $fItemList) {
+    //   $f.style.color = 'red';
+    // }
+
+    $fItemList.forEach($f => {
+      $f.style.color = 'blue';
+    }); // 사실 이런 스타일 변경은 css 에서 해줘야함 자바스크립트는 "무엇을 하면 '어떻게'바뀐다 할때 사용"
+
+    // $fItemList.pop();
+
+    // 유사 배열: 객체 형태를 유지한 배열
+    const foods = {
+      0: '짜장면',
+      1: '짬뽕',
+      2: '볶음밥',
+      length: 3,
+      age: 30
+    };
+    console.log(foods[0]);
+    console.log(foods.length);
+    console.log(foods.age);
+
+  </script>
+</body>
+</html>
