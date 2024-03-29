@@ -61,5 +61,5 @@ console.log('copyFoods:', copyFoods);
 console.log('==============');
 
 // a.concat(b)  ==>   […a, …b]
-const newFoods = ['육포', …foods, '닭다리', …userNames];
+const newFoods = ['육포', ...foods, '닭다리', ...userNames];
 console.log(newFoods);
