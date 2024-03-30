@@ -95,12 +95,16 @@ const appleBasket = [{
 const countByColor = appleBasket.reduce((count, apple) => {
 
   if (apple.color in count) {
-    count[apple.color]++;
-  } else {
-    count[apple.color] = 1;
+    if (apple === 'green'){count[apple.color]++;
+    
+    }else {
+      count[apple.color] = 1;
+    }
   }
   return count;
 }, {})
+
+console.log(countByColor);
 
 
 
