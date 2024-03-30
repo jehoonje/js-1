@@ -91,16 +91,17 @@ const appleBasket = [{
 // 예를 들어, 녹색 사과의 개수를 세는 함수를 작성하세요.
 
 
-const apple = {};
-    for (const green in appleBasket) {
-      const totalValue
-    }
-// // for (const name in groupedTradeByTrader) {
-// //   const totalValue = groupedTradeByTrader[name].totalValue;
-// //   const totalCount = groupedTradeByTrader[name].totalCount;
-// //   averageTradeByTrader[name] = totalValue / totalCount;
-// // }
-// // console.log(averageTradeByTrader);
+
+const countByColor = appleBasket.reduce((count, apple) => {
+
+  if (apple.color in count) {
+    count[apple.color]++;
+  } else {
+    count[apple.color] = 1;
+  }
+  return count;
+}, {})
+
 
 
 // 사탕 같은 달콤한 사과 찾기:
