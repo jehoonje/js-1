@@ -103,22 +103,54 @@ console.log(`Number of green apples: ${countGreenApples}`);
 
 
 // 사탕 같은 달콤한 사과 찾기:
-const sweetestApple = appleBasket.reduce((total, apple) => {
+const sweetestApple = appleBasket.reduce((sweetest, apple) => {
   
-  if (apple < total) {
-
+  if (apple.sweet > sweetest) {
+    return apple;
   } else {
-    
+    return sweetest;
   }
-});
+}, appleBasket[0]);
+console.log(sweetestApple);
 
 // 주어진 appleBasket 배열에서 달콤한 정도가 특정 기준을 넘는 특정 색깔의 사과들의 배열을 반환하는 함수를 작성하세요. 예를 들어, 달콤한 정도가 10을 넘는 빨간색 사과들을 찾는 함수를 작성하세요.
 // 색깔별 평균 달콤함 계산하기:
 
+const filteredFruits =
+            appleBasket.filter(apple => apple.sweet > 10 );
+            console.log(filteredFruits);
 // 주어진 appleBasket 배열에서 특정 색깔의 사과들의 평균 달콤함을 계산하는 함수를 작성하세요. 예를 들어, 녹색 사과들의 평균 달콤함을 계산하는 함수를 작성하세요.
 // 가장 달콤한 사과 찾기:
+let count = 0; // 녹색 사과의 개수를 세는 변수를 초기화합니다.
 
+const reducedApple = appleBasket.reduce((total, apple) => {
+    if (apple.color === 'green') {
+      total += apple.sweet; // 녹색 사과의 달콤함을 누적합니다.
+      count++; // 녹색 사과 개수를 세기 위해 count를 증가시킵니다.
+    }
+    return total; // 수정된 부분: total만 반환합니다.
+}, 0); // 초기값으로 누적값을 0으로 설정합니다.
+
+const avgApple = reducedApple / count; // 평균을 구하기 위해 count로 나눕니다.
+console.log(avgApple);
 // 주어진 appleBasket 배열에서 특정 색깔의 가장 달콤한 사과의 객체를 반환하는 함수를 작성하세요. 예를 들어, 빨간색 사과 중에서 가장 달콤한 사과를 찾는 함수를 작성하세요.
+
+const appRed = appleBasket.reduce((total, apple) => {
+    if (apple.color === 'red' && apple.sweet > total.sweet) {
+      return apple
+    } else {
+      return total;
+    }
+});
+
+console.log(appRed);
 // 사과 정렬하기:
 
 // 주어진 appleBasket 배열을 달콤함을 기준으로 오름차순으로 정렬하는 함수를 작성하세요.
+
+// 달콤함을 기준으로 사과를 정렬합니다.        기준
+const appleSort = appleBasket.sort((a, b) => a.sweet - b.sweet);
+
+// 정렬된 사과를 출력합니다.
+console.log(appleSort);
+
