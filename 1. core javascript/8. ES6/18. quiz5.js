@@ -52,3 +52,66 @@ console.log(calculator.add(14)); // 17
 console.log(calculator.add(21)); // 38
 console.log(calculator.subtract(29)); // 9
 console.log(calculator.getTotal()); // 9
+
+
+
+
+/////////////////////// 내가 퍼온 gpt문제 ////
+
+
+const appleBasket = [{
+  color: 'green',
+  sweet: 13
+},
+{
+  color: 'red',
+  sweet: 14
+},
+{
+  color: 'red',
+  sweet: 11
+},
+{
+  color: 'green',
+  sweet: 6
+},
+{
+  color: 'green',
+  sweet: 7
+},
+{
+  color: 'green',
+  sweet: 9
+},
+];
+
+// 특정 색깔 사과 개수 세기:
+
+// 주어진 appleBasket 배열에서 특정 색깔의 사과가 몇 개 있는지 세는 함수를 작성하세요. 
+// 예를 들어, 녹색 사과의 개수를 세는 함수를 작성하세요.
+
+
+const apple = {};
+    for (const green in appleBasket) {
+      const totalValue
+    }
+// // for (const name in groupedTradeByTrader) {
+// //   const totalValue = groupedTradeByTrader[name].totalValue;
+// //   const totalCount = groupedTradeByTrader[name].totalCount;
+// //   averageTradeByTrader[name] = totalValue / totalCount;
+// // }
+// // console.log(averageTradeByTrader);
+
+
+// 사탕 같은 달콤한 사과 찾기:
+
+// 주어진 appleBasket 배열에서 달콤한 정도가 특정 기준을 넘는 특정 색깔의 사과들의 배열을 반환하는 함수를 작성하세요. 예를 들어, 달콤한 정도가 10을 넘는 빨간색 사과들을 찾는 함수를 작성하세요.
+// 색깔별 평균 달콤함 계산하기:
+
+// 주어진 appleBasket 배열에서 특정 색깔의 사과들의 평균 달콤함을 계산하는 함수를 작성하세요. 예를 들어, 녹색 사과들의 평균 달콤함을 계산하는 함수를 작성하세요.
+// 가장 달콤한 사과 찾기:
+
+// 주어진 appleBasket 배열에서 특정 색깔의 가장 달콤한 사과의 객체를 반환하는 함수를 작성하세요. 예를 들어, 빨간색 사과 중에서 가장 달콤한 사과를 찾는 함수를 작성하세요.
+// 사과 정렬하기:
+
+// 주어진 appleBasket 배열을 달콤함을 기준으로 오름차순으로 정렬하는 함수를 작성하세요.
