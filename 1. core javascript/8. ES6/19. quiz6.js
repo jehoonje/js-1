@@ -91,45 +91,54 @@ const traders = [
 
 
 // 1 모든 거래의 평균 거래액을 계산하세요.
-function calculateAverage(traders) {
-  // reduce()를 사용하여 총 거래액을 계산
-  const totalTradeValue = traders.reduce((total, trader) => {
-    return total + trader.value; // 각 거래의 거래액을 누적하여 총 거래액 계산
-  }, 0);
+// function calculateAverage(traders) {
+//   // reduce()를 사용하여 총 거래액을 계산
+//   const totalTradeValue = traders.reduce((total, trader) => {
+//     return total + trader.value; // 각 거래의 거래액을 누적하여 총 거래액 계산
+//   }, 0);
 
-  // 평균 거래액 계산
-  const average = totalTradeValue / traders.length;
+//   // 평균 거래액 계산
+//   const average = totalTradeValue / traders.length;
 
-  return average;
-}
+//   return average;
+// }
 
-// 함수 호출하여 평균 거래액 계산
-const averageTradeValue = calculateAverage(traders);
-console.log(averageTradeValue);
+// // 함수 호출하여 평균 거래액 계산
+// const averageTradeValue = calculateAverage(traders);
+// console.log(averageTradeValue);
 
-// 예상 출력 형태: 숫자 (평균 거래액)
-// 2022년과 2023년에 대전에서 발생한 거래의 총 거래액을 각각 계산하는 함수
-const calculateCityTotalValue = (traders, city, year) => {
-  const cityTotalValue = traders.reduce((total, currentValue) => {
-    // 현재 거래의 도시와 연도를 확인하여 대전에서 발생한 2022년 또는 2023년 거래인지 검사
-    if (currentValue.trader.city === city && (currentValue.year === 2022 || currentValue.year === 2023)) {
-      total += currentValue.value; // 대전에서 발생한 거래의 총 거래액 누적
-    }
-    return total;
-  }, 0); // 초기값은 0으로 설정하여 누적할 총 거래액을 나타냄
+// // 예상 출력 형태: 숫자 (평균 거래액)
+// // 2022년과 2023년에 대전에서 발생한 거래의 총 거래액을 각각 계산하는 함수
+// const calculateCityTotalValue = (traders, city, year) => {
+//   const cityTotalValue = traders.reduce((total, currentValue) => {
+//     // 현재 거래의 도시와 연도를 확인하여 대전에서 발생한 2022년 또는 2023년 거래인지 검사
+//     if (currentValue.trader.city === city && (currentValue.year === 2022 || currentValue.year === 2023)) {
+//       total += currentValue.value; // 대전에서 발생한 거래의 총 거래액 누적
+//     }
+//     return total;
+//   }, 0); // 초기값은 0으로 설정하여 누적할 총 거래액을 나타냄
 
-  return cityTotalValue;
-};
+//   return cityTotalValue;
+// };
 
-// 함수 호출하여 각 연도별 대전에서 발생한 거래의 총 거래액 계산
-const totalValue2022 = calculateCityTotalValue(traders, '대전', 2022);
-const totalValue2023 = calculateCityTotalValue(traders, '대전', 2023);
+// // 함수 호출하여 각 연도별 대전에서 발생한 거래의 총 거래액 계산
+// const totalValue2022 = calculateCityTotalValue(traders, '대전', 2022);
+// const totalValue2023 = calculateCityTotalValue(traders, '대전', 2023);
 
-console.log("2022년 대전에서 발생한 거래의 총 거래액:", totalValue2022);
-console.log("2023년 대전에서 발생한 거래의 총 거래액:", totalValue2023);
+// console.log("2022년 대전에서 발생한 거래의 총 거래액:", totalValue2022);
+// console.log("2023년 대전에서 발생한 거래의 총 거래액:", totalValue2023);
 
 // 예상 출력 형태: 객체 {2022: 숫자, 2023: 숫자}
 // 3 거래액이 가장 큰 거래의 상세 정보를 출력하세요.
+const maxValue = traders.reduce((max, currentValue) => {
+  
+  if (max < currentValue.value) {
+    return currentValue.value;
+  } else {
+    return max;
+  } 
+}, 0); 
+console.log(maxValue);
 
 // 예상 출력 형태: 객체 {trader: {name: 문자열, city: 문자열}, year: 숫자, value: 숫자}
 // 4 모든 거래자의 이름을 알파벳 순으로 정렬하여 출력하세요.
