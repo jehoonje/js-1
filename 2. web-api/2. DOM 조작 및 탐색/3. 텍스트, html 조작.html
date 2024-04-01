@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .highlight {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="greet">hello<span class="highlight">World</span></div>
+    
+
+    <script>
+      const $greet = document.getElementById("greet");
+      console.log($greet.textContent.trim());
+
+      $greet.innerHTML = 'hi <span class="highlight">java</span>'; // textContent 명령어쓰면 자식 태그 다사라질수도
+    </script>
+  </body>
+</html>
