@@ -4,7 +4,7 @@ const traders = [
       name: '김철수',
       city: '대전',
     },
-    year: 2023,
+    year: 2024,
     value: 500000,
   },
   {
@@ -52,8 +52,8 @@ const traders = [
       name: '김철수',
       city: '대전',
     },
-    year: 2023,
-    value: 1500000,
+    year: 2025,
+    value: 150000,
   },
   {
     trader: {
@@ -129,23 +129,30 @@ const traders = [
 // console.log("2023년 대전에서 발생한 거래의 총 거래액:", totalValue2023);
 
 // 예상 출력 형태: 객체 {2022: 숫자, 2023: 숫자}
-// 3 거래액이 가장 큰 거래의 상세 정보를 출력하세요.
-const maxValue = traders.reduce((max, currentValue) => {
-  
-  if (max < currentValue.value) {
-    return currentValue.value;
-  } else {
-    return max;
-  } 
-}, 0); 
-console.log(maxValue);
 
 // 예상 출력 형태: 객체 {trader: {name: 문자열, city: 문자열}, year: 숫자, value: 숫자}
 // 4 모든 거래자의 이름을 알파벳 순으로 정렬하여 출력하세요.
+// const sortedTradersByAbc = traders.map(trader => trader.trader.name).sort((a, b) => {
+//   // 이름을 비교하여 정렬
+//   if (a < b) return -1; // a가 b보다 작으면 -1 반환하여 a를 앞으로 정렬
+//   if (a > b) return 1; // a가 b보다 크면 1 반환하여 b를 앞으로 정렬
+//   return 0; // 같으면 0 반환하여 순서 변경 없음
+// });
+
+// console.log(sortedTradersByAbc);
 
 // 예상 출력 형태: 배열 [문자열1, 문자열2, ...]
 // 5 거래액이 500000원 이하인 거래 중 가장 최근에 발생한 거래의 연도를 출력하세요.
-
+// const recentTrsYear = traders
+//       .filter(trs => trs.value <= 500000)
+//       .reduce((recentYear, trs) => {
+//         if (recentYear < trs.year) {
+//           return trs.year;
+//         } else {
+//           return recentYear;
+//         }
+//       }, 0);
+//       console.log(recentTrsYear);
 // 예상 출력 형태: 숫자 (최근 거래 연도)
 // 6 각 거래자가 거래한 총 거래 횟수를 오름차순으로 정렬하여 출력하세요.
 
