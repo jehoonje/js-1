@@ -9,40 +9,21 @@
   <body>
     <ul id="fruits">
       <li>사과</li>
+      <li>바나나</li>
+      <li>포도</li>
     </ul>
 
     <script>
-      // 태그 이름과 텍스트를 전달받으면 태그를 생성하는 함수
-      function makeNewTag(tagName = "div", options = {}) {
-        const $newTag = document.createElement(tagName);
-        if (options.text) $newTag.textContent = options.text;
-        return $newTag;
-      }
+      const $fruits = document.getElementById('fruits');
+      const [$apple, $banana, $grape] = [...$fruits.children];
+      const $newLi = document.createElement('li');
+      $newLi.textContent = '맹고';
 
-      // 태그를 추가해주는 함수
-      function append($parent, tagName, options) {
-        $parent.appendChild(makeNewTag(tagName, options));
-      }
 
-      const $ul = document.getElementById("fruits");
-      append($ul, "li", { text: "바나나", className: '', id: '' });
-      append($ul, "li", { text: "망고" });
-      append($ul, "li", { text: "오렌지" });
-      append($ul, 'a', { href: ''});
-
-      /*
-    // 태그 생성: <li></li>
-    const $newLi = document.createElement('li');
-    console.log($newLi);
-
-    // 텍스트 추가하기: <li>바나나</li>
-    $newLi.textContent = '바나나';
-    console.log($newLi);
-
-    // ul에 자식노드로 붙이기
-    const $ul = document.getElementById('fruits');
-    $ul.appendChild($newLi); // 맨 마지막 위치에 추가
-*/
+      // 중간삽입 : insertBefore
+      // $fruits.insertBefore($newLi, $grape);
+      // $fruits.insertBefore($newLi, $fruits.firstElementChild);
+      $fruits.insertBefore($newLi, document.querySelector('li:nth-child(2)'));
     </script>
   </body>
 </html>
