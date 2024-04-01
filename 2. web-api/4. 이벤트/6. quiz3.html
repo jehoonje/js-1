@@ -42,7 +42,7 @@
   </style>
 </head>
 <body>
-  <!-- mouse over mouse enter -->
+  <!-- mouse over mouse leave -->
   <div class="dropdown">
     <button class="btn">Drop</button>
     <div id="drop-content">
@@ -52,7 +52,42 @@
         <a href='#'>Menu4</a>
         <a href='#'>Menu5</a>
     </div>
-    
+    <script>
+    const $dropContent = document.getElementById('drop-content');
+    const $btn = document.querySelector('.btn');
+
+    $btn.addEventListener('mouseover', () => {
+      $dropContent.style.display = 'block';
+    });
+    $btn.addEventListener('mouseleave', () => {
+      $dropContent.style.display = 'none';
+    });
+    $dropContent.addEventListener('mouseover', () => {
+      $dropContent.style.display = 'block';
+    });
+    $dropContent.addEventListener('mouseleave', () => {
+      $dropContent.style.display = 'none';
+    });
+
+
+    // const $dropContent = document.getElementById("drop-content");
+    // const $btn = document.querySelector('.btn');
+
+    // $btn.onmouseover = () => {
+    //   $dropContent.style.display = "block";
+    // };
+
+
+    // /*
+    //     mouseover, mouseout    : 버블링 있음
+    //     mouseenter, mouseleave : 버블링 없음
+    // */
+
+    // $btn.parentElement.onmouseleave = () => {
+    //   $dropContent.style.display = "none";
+    // };
+
+    </script>
 </div>
 </body>
 </html>

@@ -39,5 +39,16 @@
             <li>마파두부</li>
         </ul>
     </div>
+
+    <script>
+      const $lunches = document.getElementById('lunches');
+      const $menu = document.querySelector('.menu ul');
+      const $title = document.querySelector('#lunches .title');
+      
+
+      $lunches.addEventListener('click', () => {
+        $lunches.classList.toggle('open');  // 없으면 추가 있으면 제거 toggle
+      });
+    </script>
 </body>
 </html>
