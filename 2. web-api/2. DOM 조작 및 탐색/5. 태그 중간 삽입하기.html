@@ -24,6 +24,11 @@
       // $fruits.insertBefore($newLi, $grape);
       // $fruits.insertBefore($newLi, $fruits.firstElementChild);
       $fruits.insertBefore($newLi, document.querySelector('li:nth-child(2)'));
+      
+      // 노드 이동
+      $fruits.appendChild($apple); // 원래 있던 애를 추가하면 뒤로
+      $fruits.insertBefore($banana, null); // null 이면 맨뒤로 붙음
+      
     </script>
   </body>
 </html>
