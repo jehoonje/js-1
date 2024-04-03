@@ -49,3 +49,17 @@ function renderNewTodo({ id, text }) {
   `;
   $toDoList.appendChild($newLi);
 }
+
+// 삭제 버튼 클릭 이벤트 처리
+document.addEventListener('click', function(event) {
+  const target = event.target;
+  if (target.classList.contains('lnr-cross-circle')) {
+      // 클릭한 삭제 버튼의 부모 요소인 할 일 항목을 찾아서 삭제
+      const todoItem = target.closest('.todo-list-item');
+      const todoId = todoItem.dataset.id;
+      deleteTodoItem(todoId); // 해당 항목 삭제
+      todoItem.remove(); // UI에서 삭제된 항목 제거
+  }
+});
+
+
