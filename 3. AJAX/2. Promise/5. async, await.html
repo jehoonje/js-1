@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button id="show">댓글조회!</button>
+  <script>
+
+    function fetchGet() {
+      fetch('http://localhost:8383/api/v1/replies')
+        .then(res => res.json())
+        .then(json => {
+          console.log(json);
+        });
+    }
+
+    document.getElementById('show').onclick = e => {
+      fetchGet();
+    }
+  </script>
+  
+</body>
+</html>
