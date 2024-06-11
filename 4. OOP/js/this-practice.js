@@ -10,9 +10,9 @@ function foo() {
 // foo();
 
 // 객체에서의 this
-
 const madeBy = 'KIA';
 const model = 'K7';
+
 const car = {
   madeBy: 'Hyundai',
   model: '그랜져',
@@ -24,12 +24,13 @@ const car = {
 
 // car.showInfo();
 
-// 이벤트 핸들러의 this - function 으로 선언시 이벤트를 건 요소 
+// 이벤트핸들러의 this - function으로 선언시 이벤트를 건 요소
 const $btn = document.getElementById('btn');
 
 const buttonHandler = function(e) {
   console.log('버튼 클릭!');
   console.log(this);
+  // $btn.style.background = 'red';
   this.style.background = 'red';
 };
 
